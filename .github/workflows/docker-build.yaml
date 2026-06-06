@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      -main
+      - main
 
 jobs:
   build-and-push:
@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout source code
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Docker Build
-        run:
-          docker build -t dli-yunus:latest .
+        run: |
+          docker build -t dli-cohort:latest .
